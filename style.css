@@ -1,0 +1,37 @@
+p{
+    font-size: x-small;
+}
+
+ul{
+    list-style-type: none;
+    margin: 0pt;
+    margin-top: 25px;
+    padding: 0pt;
+}
+
+li{
+    margin-bottom: 5px;
+}
+
+.item-box{
+    height: 2rem;
+    width: 15rem;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: small;
+    border: 1px solid red;
+    border-width: 1pt;
+    border-radius: 5px;
+}
+
+.item-box-btn{
+    height: 2rem;
+    width: 2rem;
+    border: 0mm;
+    background-color: red;
+}
+
+.button-icn1{
+ height: 2pt;
+ width: 1pt;
+ color: white;
+}
