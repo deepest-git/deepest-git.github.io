@@ -20,6 +20,7 @@ var id=0;
         t=$("input").val();
         if(t.length>0)
         $("ul").append(getItem(t));
+        $("input").val("");
     });
 
     function remove(event){console.log($(event.target).parent().parent().remove())}

@@ -1,5 +1,13 @@
 p{
-    font-size: x-small;
+    font-size: small;
+}
+
+.flex-container{
+    height: 3.5rem;
+    width: 16rem;
+    padding: 5px;
+    background-color: gainsboro;
+    border-radius: 5px;
 }
 
 ul{
