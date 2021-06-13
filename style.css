@@ -1,13 +1,33 @@
+body{
+    margin: 0;
+    padding: 5px;
+}
+
 p{
     font-size: small;
 }
 
 .flex-container{
-    height: 3.5rem;
-    width: 16rem;
-    padding: 5px;
+    display: flex;
+}
+
+#info{
+    height: 100%;
+    padding: 15px;
+    margin-bottom: 20px;
     background-color: gainsboro;
     border-radius: 5px;
+}
+
+#inp{
+    width: 100%;
+    min-height: 48px;
+    margin: 5px;
+}
+
+#ad{
+    min-height: 50px;
+    margin-bottom: 0px;
 }
 
 ul{
@@ -21,9 +41,14 @@ li{
     margin-bottom: 5px;
 }
 
-.item-box{
+#t{
+    align-self: center;
+    margin-right: 5px;
+}
+
+#item-box{
     height: 2rem;
-    width: 15rem;
+    width: 100%;
     font-family: 'Courier New', Courier, monospace;
     font-size: small;
     border: 1px solid red;
@@ -35,11 +60,6 @@ li{
     height: 2rem;
     width: 2rem;
     border: 0mm;
+    color: white;
     background-color: red;
-}
-
-.button-icn1{
- height: 2pt;
- width: 1pt;
- color: white;
 }

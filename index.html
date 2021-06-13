@@ -10,13 +10,18 @@
     <script src="./main.js"></script>
 </head>
 <body>
-    <p id="info" class="flex-container">This is a To-Do list with timer to help you add and finish tasks within alloted time.</p>
+    <div id="info">This is a To-Do list with timer to help you add and finish tasks within alloted time.
+        <p style="font-size: 10pt; margin-bottom: 0px;">Click on the item to toggle timer.</p>
+    </div>
 
     <!-- <div class="item-box">
         <button class="item-box-btn"></button>
     </div> -->
 
-    <div><input id="inp" type="text"/> <button id="ad">Add</button></div>
+    <div class="flex-container" style="display: flex; align-content: center;">
+        <div style="flex-basis: 100%;"><input id="inp" type="text"/></div>
+        <div style="align-self: center;"><button id="ad">Add</button></div>
+    </div>
      
     <ul></ul>
 </body>
