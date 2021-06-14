@@ -39,8 +39,10 @@ function pause(t){
 
     function toggleTimer(item){
         let id=$(item).attr('id');
+        if(clock[id]==null || clock[id]==0){
         console.log($(item).find("#t"));
         clock[id]=t1($(item).find("#t"),0,0);
+    }
     }
 
     $("#ad").click(()=>{
