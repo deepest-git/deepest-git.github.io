@@ -1,16 +1,21 @@
 $(document).ready(()=>{
 var id=0;
-var timerStatus=new Array();
+var timerLimit=new Array(); //stores input time
+var clock=new Array(); //useless
 
-async function t1(){
-    i=0;
-    $("#t1").html(i++);
+async function t1(t,m,s){
+    if(m==timerLimit[$(t).parent().parent().attr('id')])return;
+    if(s==59){s=0;$(t).html(++m+":"+s);}
+    $(t).html(m+":"+s++);
+    await setTimeout(()=>t1(t,m,s),1000);
+    //await pause(t);
 }
 
-async function t2(){
-    i=0;
-    $("#t2").html(i++);
+function pause(t){
+   return new Promise(r=>setTimeout(r,t));
 }
+
+//t1($("#time"),0,0);
 
     function getItem(data){
         let l=$("<li>");
@@ -27,20 +32,25 @@ async function t2(){
         v.append($("<div>",{"style":"align-self:center"}).html(data.toString()));
         v.append(time);
         l.append(v);
-        timerStatus[id]=0;//timer not running
         l.attr('id',""+id++);
-        l.click(toggleTimer(l));
+        l.click((event)=>toggleTimer(l));
         return l;
     } 
 
     function toggleTimer(item){
+        let id=$(item).attr('id');
+        console.log($(item).find("#t"));
+        clock[id]=t1($(item).find("#t"),0,0);
     }
 
     $("#ad").click(()=>{
         t=$("input").val();
         if(t.length>0){
-        let time=window.prompt("Enter Time in mins. \n NOTE: Default will be taken 5min if you skip this","5");
-        $("ul").append(getItem(t));
+        let time=window.prompt("Enter Time in mins.\nNOTE: Default will be taken 5min if you skip this","5");
+        let litem=getItem(t);
+        litem.find('#t').html(time);
+        timerLimit[litem.attr('id')]=parseInt(time);
+        $("ul").append(litem);
         $("input").val("");}
     });
 

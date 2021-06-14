@@ -26,6 +26,9 @@ p{
 }
 
 #ad{
+    border:solid blue;
+    border-width: 2px;
+    border-radius: 5px;
     min-height: 50px;
     margin-bottom: 0px;
 }
